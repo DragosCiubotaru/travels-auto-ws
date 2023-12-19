@@ -1,0 +1,36 @@
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // TestNG
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+
+    // Selenium WebDriver
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.0'
+
+    // Playwright Java
+    testImplementation 'com.microsoft.playwright:playwright:1.17.2'
+}
+
+test { //this is the gradle task to be executed
+    useTestNG() { //Tells Gradle to use TestNG
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+//        suites 'src/test/suite.xml' //location of our suite.xml
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showCauses true
+        showExceptions true
+        showStackTraces true
+    }
+}
+
+sourceCompatibility = '21'
+targetCompatibility = '21'

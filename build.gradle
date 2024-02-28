@@ -9,13 +9,26 @@ repositories {
 
 dependencies {
     // TestNG
-    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
 
     // Selenium WebDriver
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.16.1'
 
-    // Playwright Java
-    testImplementation 'com.microsoft.playwright:playwright:1.17.2'
+    // Playwright Main
+    // https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
+    implementation group: 'com.microsoft.playwright', name: 'playwright', version: '1.40.0'
+
+    // Selenium Chrome Driver
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.16.1'
+
+
+    // Selenium Remote Driver
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '4.16.1'
+
 }
 
 test { //this is the gradle task to be executed
